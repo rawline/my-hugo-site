@@ -41,7 +41,7 @@ Content-Length: 11
 Connection: close
 
 name=rafael
-
+```
 
 **Результат:**  
 Сервер вернул код `405 Method Not Allowed`, что означает,
@@ -55,11 +55,14 @@ name=rafael
 
 GET-запрос был отправлен с помощью утилиты `curl`.
 
+```
 curl -i http://httpbin.org/get
+```
 
 Сервер вернул код 200 OK и JSON-ответ с информацией о запросе.
 
-js-20-10-2025-2@MacBook-Air-admin-126 ~ % curl -i http://httpbin.org/get
+```http
+curl -i http://httpbin.org/get
 HTTP/1.1 200 OK
 Date: Fri, 09 Jan 2026 20:39:17 GMT
 Content-Type: application/json
@@ -80,20 +83,22 @@ Access-Control-Allow-Credentials: true
   "origin": "89.37.185.230", 
   "url": "http://httpbin.org/get"
 }
+```
 
 ### POST-запрос
 
 POST-запрос с JSON-телом был отправлен следующим образом:
 
+```
 curl -i http://httpbin.org/post \
   -H "Content-Type: application/json" \
   -d '{"name":"Rafael","task":"curl"}'
-
+```
 
 Сервер вернул код 200 OK и отразил переданные данные в ответе:
 
-
-js-20-10-2025-2@MacBook-Air-admin-126 ~ % curl -i http://httpbin.org/post \
+```
+curl -i http://httpbin.org/post \
   -H "Content-Type: application/json" \
   -d '{"name":"Rafael","task":"curl"}'
 
@@ -126,7 +131,7 @@ Access-Control-Allow-Credentials: true
   "origin": "89.37.185.230", 
   "url": "http://httpbin.org/post"
 }
-
+```
 
 ---
 
@@ -142,8 +147,9 @@ Access-Control-Allow-Credentials: true
 
 URL запроса:
 
+```
 https://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/12/2025&date_req2=31/12/2025&VAL_NM_RQ=R01235
-
+```
 
 Запрос был выполнен с помощью HTTP-клиента Postman.
 В ответе получены данные в формате XML с курсами валют за выбранный период.
